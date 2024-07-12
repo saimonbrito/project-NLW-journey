@@ -2,10 +2,12 @@ import { ArrowRight , Calendar,MapPin} from "lucide-react";
 import { useState } from "react";
 
 
+
 export function Main(){
     const [ box,setBox] = useState(false)
 
-    function funBox(){
+    function funBox(e:any){
+        e.preventDefault()
         setBox(true)
     }
     return(
