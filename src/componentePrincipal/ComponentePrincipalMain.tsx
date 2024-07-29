@@ -1,6 +1,19 @@
 import { CircleCheck, CircleDashed, Link2, Plus, UserCog } from "lucide-react";
+import { CadastrarAtividades } from "../components/cadastrarAtividades";
+import { useState } from "react";
+import { CardComponentePrincipal } from "../components/cardComponetePrincipal";
+import { Button } from "../globalComponents/button";
 
 export function ComponentePrincipalMain(){
+
+    const [boxcadastrarAtividades,setCadastrarAtividades] = useState(false)
+
+    function openFunboxcadastrarAtividades(){
+        setCadastrarAtividades(true)
+    }
+    function closeFunboxcadastrarAtividades(){
+        setCadastrarAtividades(false)
+    }
     return(
         <div className="px-2">
             <div className="flex items-start gap-16">
@@ -8,10 +21,15 @@ export function ComponentePrincipalMain(){
                 <main className=" flex-1">
                     <div className="flex justify-between items-center">
                         <span className="text-zinc-50 font-bold text-xl">Atividades</span>
-                        <div className="flex  bg-lime-300 px-5 py-2 justify-center items-center gap-2 rounded-lg">
-                            <Plus className="  text-lime-950"/>
-                            <button className="text-lime-950">Cadastrar atividade</button>
-                        </div>
+
+                        
+
+                        <Button  onClick={openFunboxcadastrarAtividades}>
+                           <Plus className="  text-lime-950"/>
+                            Cadastra atividades
+                        </Button>
+
+
                     </div>
 
                     <div className=" flex my-6 flex-col gap-8">
@@ -25,13 +43,8 @@ export function ComponentePrincipalMain(){
                             <span className="text-zinc-300 text-sm">Dia 18</span><span className=" px-2 text-sm text-zinc-500">Domingo</span>
                             </div>
                             {/* card1 */}
-                            <div className=" bg-zinc-900  rounded-lg px-4 flex justify-between items-center">
-                                <div className="flex items-center gap-2">
-                                    <CircleCheck className="text-lime-300 size-5"/>
-                                    <p className="text-zinc-100 text-sm">Corrida de Kart</p>
-                                </div>
-                                <span className="text-zinc-400">14:00h</span>
-                            </div> 
+                            <CardComponentePrincipal childdren="Corrida de Kart" />
+                            <CardComponentePrincipal childdren="Academia em grupo"/>
                             {/* card2 */}
                             <div className=" bg-zinc-900  rounded-lg px-4 flex justify-between items-center">
                                 <div className="flex items-center gap-2">
@@ -71,8 +84,12 @@ export function ComponentePrincipalMain(){
                            
                           </div>
                     </div>
-
+                    {boxcadastrarAtividades && (
+                    <CadastrarAtividades
+                        closeFunBoxConfirmarViagem={closeFunboxcadastrarAtividades}
                     
+                        />
+                    )}
 
                 </main>
 
@@ -82,7 +99,7 @@ export function ComponentePrincipalMain(){
                         <div className="flex justify-center gap-20 items-center">
                             <div className="flex  flex-col gap-1">
                                 <span className="text-zinc-100">Reserva do AirBnB</span>
-                                <a className="text-zinc-400 text-xs" href="*">https://www.airbnb.com.br/rooms/104700011</a>
+                                <a className="text-zinc-400 text-xs truncate hover:text-zinc-200" href="*">https://www.airbnb.com.br/rooms/104700011</a>
                             </div>
                             <Link2 className="text-zinc-400"/>                        
                         </div>
@@ -90,17 +107,17 @@ export function ComponentePrincipalMain(){
                         <div className="flex justify-center gap-20 items-center">
                             <div className="flex  flex-col gap-1">
                                 <span className="text-zinc-100">Regras da casa</span>
-                                <a className="text-zinc-400 text-xs" href="*">https://www.airbnb.com.br/rooms/104700011</a>
+                                <a className="text-zinc-400 text-xs truncate  hover:text-zinc-200" href="#">https://www.airbnb.com.br/rooms/104700011</a>
                             </div>
                             <Link2 className="text-zinc-400"/>                        
                         </div>
 
-                        <div className="flex  bg-zinc-800 px-5 py-2 justify-center items-center gap-2 rounded-lg">
+                        <div className="flex  bg-zinc-800 px-4 py-2 justify-center items-center gap-2 rounded-lg">
                             <Plus className="  text-zinc-400"/>
-                            <button className="text-zinc-200 px-5 py-2">Cadastrar novo link</button>
+                            <button className="text-zinc-200 ">Cadastrar novo link</button>
                         </div>
 
-                             <h2 className="text-zinc-50 items-center">Convictions</h2>
+                             <h2 className="text-zinc-50 ">Convictions</h2>
 
                         <div className="flex justify-center gap-20 items-center">
                             <div className="flex  flex-col gap-1">
@@ -125,9 +142,9 @@ export function ComponentePrincipalMain(){
                             <CircleCheck className="text-lime-300"/>                        
                         </div>
 
-                        <div className="flex  bg-zinc-800 px-5 py-2 justify-center items-center gap-2 rounded-lg">
+                        <div className="flex  bg-zinc-800 px-4 py-2 justify-center items-center gap-2 rounded-lg">
                             <UserCog className="  text-zinc-400"/>
-                            <button className="text-zinc-200 px-5 py-2">Gerenciar convidados</button>
+                            <button className="text-zinc-200 ">Gerenciar convidados</button>
                         </div>
                         
                 </div>

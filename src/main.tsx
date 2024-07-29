@@ -6,7 +6,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import './index.css'
-import {ComponentesPrincipal} from "../src/components/componentesPincipal"
+import {ComponentesPrincipal} from "./componentePrincipal/componentesPincipal"
 
 const router = createBrowserRouter([
   {

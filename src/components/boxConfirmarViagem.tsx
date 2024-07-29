@@ -4,13 +4,17 @@ interface boxConfirmaraViagemProps{
     closeFunBoxConfirmarViagem:(e:any)=> void
     emailSubmit:(e:any)=> void
     confirmarCriacaoViagem:()=> void
+    setOwnerName:(ownerName:string)=>void
+    setOwnerEmail:(OwnerEmail:string)=> void
 }
 
 
 export function BoxConfirmaraViagem({
     closeFunBoxConfirmarViagem,
     emailSubmit,
-    confirmarCriacaoViagem
+    confirmarCriacaoViagem,
+    setOwnerName,
+    setOwnerEmail
 }:boxConfirmaraViagemProps){
     return(
         <div className="fixed inset-0 bg-black/60 flex justify-center items-center">
@@ -30,10 +34,13 @@ export function BoxConfirmaraViagem({
                                  <div className="flex  justify-between items-center px-6 py-5  bg-zinc-950 rounded-md">
                                      <User className="size-5 text-zinc-400"/>
                                      <input 
-                                     type='email'
-                                     name="email"
+                                     type='text'
+                                     name="text"
                                      placeholder=" Seu nome completo" 
-                                     className=" outline-none bg-transparent w-full size-5 px-4 py-2 bg-zinc-950 placeholder:text-zinc-400 text-zinc-400 flex-1" />
+                                     className=" outline-none bg-transparent w-full size-5 px-4 py-2 bg-zinc-950 placeholder:text-zinc-400 text-zinc-400 flex-1" 
+                                     
+                                     onChange={event => setOwnerName(event.target.value)}
+                                     />
                                  </div>
 
                                  <div className="flex  justify-between items-center px-6 py-5  bg-zinc-950 rounded-md">
@@ -42,7 +49,9 @@ export function BoxConfirmaraViagem({
                                      type='email'
                                      name="email"
                                      placeholder="  Seu e-mail pessoal" 
-                                     className=" outline-none bg-transparent w-full size-5 px-4 py-2 bg-zinc-950 placeholder:text-zinc-400 text-zinc-400 flex-1" />
+                                     className=" outline-none bg-transparent w-full size-5 px-4 py-2 bg-zinc-950 placeholder:text-zinc-400 text-zinc-400 flex-1"
+                                     onChange={event => setOwnerEmail(event.target.value)}
+                                     />
                                  </div>
 
                                  

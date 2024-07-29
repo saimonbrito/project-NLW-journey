@@ -3,9 +3,6 @@ import { ComponentePrincipalMain } from "./ComponentePrincipalMain";
 
 
 
- 
- 
- 
  export function ComponentesPrincipal(){
     return(
       
