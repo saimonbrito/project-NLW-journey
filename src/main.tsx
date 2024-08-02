@@ -14,7 +14,7 @@ const router = createBrowserRouter([
     element: <Root/>,
   },
   {
-    path: "/ComponentesPrincipal",
+    path: "/trips/:tripId",
     element: <ComponentesPrincipal/>,
   },
 ]);

@@ -112,7 +112,7 @@ export function Main(){
         }
 
 
-         const response = await api.post('/ComponentesPrincipal',
+         const response = await api.post('/trips',
             {
                 destination,
                 starts_at: eventStartAndeDate.from,
@@ -125,8 +125,9 @@ export function Main(){
 
         const {tripId} = response.data
 
-        navigate(`/ComponentesPrincipal/${tripId}`)
+        navigate(`/trips/${tripId}`)
     }
+    
 
 
     return(
