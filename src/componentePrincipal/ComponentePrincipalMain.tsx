@@ -1,8 +1,9 @@
-import { CircleCheck, CircleDashed, Link2, Plus, UserCog } from "lucide-react";
-import { CadastrarAtividades } from "../components/cadastrarAtividades";
+import { CircleCheck, Plus, } from "lucide-react";
 import { useState } from "react";
+import { CadastrarAtividades } from "../components/cadastrarAtividades";
 import { CardComponentePrincipal } from "../components/cardComponetePrincipal";
 import { Button } from "../globalComponents/button";
+import { Convidados } from "../components/convidados";
 
 export function ComponentePrincipalMain(){
 
@@ -93,61 +94,7 @@ export function ComponentePrincipalMain(){
 
                 </main>
 
-                <div className=" w-80 flex flex-col gap-5">
-                        <h2 className="text-zinc-50">Links importantes</h2>
-
-                        <div className="flex justify-center gap-20 items-center">
-                            <div className="flex  flex-col gap-1">
-                                <span className="text-zinc-100">Reserva do AirBnB</span>
-                                <a className="text-zinc-400 text-xs truncate hover:text-zinc-200" href="*">https://www.airbnb.com.br/rooms/104700011</a>
-                            </div>
-                            <Link2 className="text-zinc-400"/>                        
-                        </div>
-
-                        <div className="flex justify-center gap-20 items-center">
-                            <div className="flex  flex-col gap-1">
-                                <span className="text-zinc-100">Regras da casa</span>
-                                <a className="text-zinc-400 text-xs truncate  hover:text-zinc-200" href="#">https://www.airbnb.com.br/rooms/104700011</a>
-                            </div>
-                            <Link2 className="text-zinc-400"/>                        
-                        </div>
-
-                        <div className="flex  bg-zinc-800 px-4 py-2 justify-center items-center gap-2 rounded-lg">
-                            <Plus className="  text-zinc-400"/>
-                            <button className="text-zinc-200 ">Cadastrar novo link</button>
-                        </div>
-
-                             <h2 className="text-zinc-50 ">Convictions</h2>
-
-                        <div className="flex justify-center gap-20 items-center">
-                            <div className="flex  flex-col gap-1">
-                                <span className="text-zinc-100">Jessica White</span>
-                                <a className="text-zinc-400 text-xs" href="*">jessica.white44@yahoo.com</a>
-                            </div>
-                            <CircleDashed className="text-zinc-400"/>                        
-                        </div>
-
-                        <div className="flex justify-center gap-20 items-center">
-                            <div className="flex  flex-col gap-1">
-                                <span className="text-zinc-100">Dr. Rita Pacocha</span>
-                                <a className="text-zinc-400 text-xs" href="*">jessica.white44@yahoo.com</a>
-                            </div>
-                            <CircleCheck className="text-lime-300"/>                        
-                        </div>
-                        <div className="flex justify-center gap-20 items-center">
-                            <div className="flex  flex-col gap-1">
-                                <span className="text-zinc-100">Wilfred Dickens III</span>
-                                <a className="text-zinc-400 text-xs" href="*">lacy.stiedemann@gmail.com</a>
-                            </div>
-                            <CircleCheck className="text-lime-300"/>                        
-                        </div>
-
-                        <div className="flex  bg-zinc-800 px-4 py-2 justify-center items-center gap-2 rounded-lg">
-                            <UserCog className="  text-zinc-400"/>
-                            <button className="text-zinc-200 ">Gerenciar convidados</button>
-                        </div>
-                        
-                </div>
+                 <Convidados/>
             </div>
         </div>
     )

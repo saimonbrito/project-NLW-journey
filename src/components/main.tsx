@@ -103,6 +103,7 @@ export function Main(){
         if(!eventStartAndeDate?.from || !eventStartAndeDate?.to){
             return
         }
+        
         if(adcionarEmailmodal.length === 0){
             return
         }
